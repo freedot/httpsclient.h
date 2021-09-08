@@ -1504,9 +1504,7 @@ namespace https {
 
             //append headers
             if (!req.post_data.empty()) {
-                char data_size[64] = { 0 };
-                _i64toa_s(req.post_data.size(), data_size, sizeof(data_size), 10);
-                req.headers.replace_header_value("Content-Length", data_size);
+                req.headers.replace_header_value("Content-Length", std::to_string(req.post_data.size()));
             }
             for (auto& header : req.headers.headers) {
                 oreq << header.name << ": " << header.value << "\r\n";
