@@ -1,7 +1,9 @@
 # httpsclient.h
 
 https客户端请求，支持gzip
+
 其中ssl处理依赖 https://github.com/ARMmbed/mbedtls
+
 gzip处理依赖 https://www.zlib.net/
 
 
