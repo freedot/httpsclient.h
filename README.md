@@ -1,5 +1,9 @@
 # httpsclient.h
-https client for c++
+
+https客户端请求，支持gzip
+其中ssl处理依赖 https://github.com/ARMmbed/mbedtls
+gzip处理依赖 https://www.zlib.net/
+
 
 
     std::string url = "https://www.qq.com";
@@ -23,3 +27,6 @@ https client for c++
     if (res2->status == 200 || res2->status == 204) {
         std::cout << body;
     }
+	
+	
+参考了 https://github.com/yhirose/cpp-httplib
