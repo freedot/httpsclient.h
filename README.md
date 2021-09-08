@@ -20,6 +20,6 @@ https client for c++
         body.append(data, data_length);
         return true;
     });
-    if (res->status == 200 || res->status == 204) {
+    if (res2->status == 200 || res2->status == 204) {
         std::cout << body;
     }
