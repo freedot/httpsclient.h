@@ -1446,8 +1446,16 @@ namespace https {
             return send("GET", url, headers_t(), "", receiver, nullptr);
         }
 
+        std::shared_ptr<response_t> get(const std::string& url, headers_t& headers, receiver_t receiver) {
+            return send("GET", url, headers, "", receiver, nullptr);
+        }
+
         std::shared_ptr<response_t> get(const std::string& url, receiver_t receiver, progress_t progress) {
             return send("GET", url, headers_t(), "", receiver, progress);
+        }
+
+        std::shared_ptr<response_t> get(const std::string& url, headers_t& headers, receiver_t receiver, progress_t progress) {
+            return send("GET", url, headers, "", receiver, progress);
         }
 
         std::shared_ptr<response_t> post(const std::string& url, headers_t& headers, const std::string& post_data) {
